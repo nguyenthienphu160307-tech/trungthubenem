@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Trung Thu Bên em</title>
+<title>Trung Thu Bên Em</title>
 <style>
   :root { --hong:#ffc2d4; --dam:#d6336c; --nen:#ffe3ec; --chu:#7a2244; }
   * { box-sizing:border-box; margin:0; padding:0; font-family:"Segoe UI",Arial,sans-serif; }
@@ -232,7 +232,11 @@ function bam(k) {
   veCham();
   if (nhap.length === CONFIG.matKhau.length) {
     if (nhap === CONFIG.matKhau) {
-      $("lock").classList.add("hidden"); $("home").classList.remove("hidden");
+      $("lock").classList.add("hidden"); 
+      $("home").classList.remove("hidden");
+      
+      // Tự động phát nhạc ngay khi nhập đúng mật khẩu
+      chonBai(bai, true);
     } else {
       $("cham").classList.add("rung");
       setTimeout(() => { $("cham").classList.remove("rung"); nhap = ""; veCham(); }, 400);
